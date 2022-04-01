@@ -31,9 +31,9 @@ $ find . -name "song.mp3" -exec ffmpeg -i "{}" -f segment -segment_time 3 -c cop
 
 3. Make a Python 3 Virtual Environment
 ```bash
-$ virtualenv venv
+$ python3 -m venv venv
 $ source venv/bin/activate
-$ pip3 install pygame requests
+$ pip3 install -r requirements.txt
 ```
 
 ## Run the Jukebox Player
