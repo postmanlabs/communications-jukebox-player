@@ -1,7 +1,7 @@
 import requests
 import pygame
 import time
-from os import listdir
+from os import listdir, environ
 from os.path import isdir, isfile, join
 
 # number of seconds to wait for each segment
@@ -90,13 +90,17 @@ try:
     # print(genres)
     print(songs)
 
+    headers = {
+        'Postman-Auth': environ.get("POSTMAN_AUTH")
+    }
+
     res = requests.post(f'{voting_app_hostname}/init', json={
         "eras": eras,
         "genres": genres
-    })
+    }, headers=headers)
     print(res)
 
-    res = requests.get(f'{voting_app_hostname}/reset')
+    res = requests.post(f'{voting_app_hostname}/reset', headers=headers)
     fetch_winner = True
     play_new_music = True
 
