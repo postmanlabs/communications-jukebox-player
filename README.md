@@ -49,6 +49,8 @@ $ python3 player.py
 $ POSTMAN_AUTH="shared api key" python3 player.py
 ```
 
+The "POSTMAN_AUTH" environment variable is used for some of the POST endpoints in the API, and must match exactly what the API has set.
+
 This should immediately start playing the 'radio' sound effect and will loop endlessly until voting starts.
 
 
