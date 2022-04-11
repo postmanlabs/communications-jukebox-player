@@ -41,7 +41,12 @@ $ pip3 install -r requirements.txt
 Modify the 'hostname' variable in the script, if necessary.
 
 ```bash
+# set your shared Postman authentication value in a shell environment
+$ export POSTMAN_AUTH="shared api key"
 $ python3 player.py
+
+# if you don't want to export the shell environment setting, you can launch the app this way:
+$ POSTMAN_AUTH="shared api key" python3 player.py
 ```
 
 This should immediately start playing the 'radio' sound effect and will loop endlessly until voting starts.
